@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption</title>
+    <link rel="icon" href="/img/incognitoIcon3.ico">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/Sweet_Alert/Libreria-SweetAlert.js"></script>
+    <script src="/Animacion_Texto/typed_library.js"></script>
+</head>
+
+<body>
+    <canvas id="canv"></canvas>
+    <script src="/Animacion_fondo_matrix/script_matrix.js"></script>
+    
+    <div id="contenedor">
+        <main id="principal">
+            <div id="bloque-header" >
+                <header>
+                    <h1><img src="/img/incognito4.png" alt="incognito"></h1>
+                    <h2 id="titulo">// <span class="typed"></span></h2>
+                </header>
+            </div>
+
+            <br>
+            <section id="section1" >
+                <div id="caja-texto1">
+                    <div>
+                        <label for="texto">Ingresa aqui.</label>
+                    </div>
+                     
+                    <textarea name="texto" class="area-texto" autofocus
+                        placeholder="Solo letras minusculas y sin acento" id="area-texto1"></textarea>
+                </div>
+                <br>
+                <div id="botones-encript">
+                    <div id="caja-botones">
+                        <button type="button" class="botones" id="boton-encript" onclick="botonEncriptar()">
+                            <span>Encriptar</span>
+                        </button>
+                        <button type="button" class="botones" id="boton-desencrpt" onclick="botonDesencriptar()">
+                            <span>Desencriptar</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <br>
+            <section id="section2" >
+                <div id="caja-texto2">
+                    <div>
+                        <label for="texto-encriptado" id="mensaje"></label>
+                    </div>
+                    <textarea name="texto-encriptado" class="area-texto" id="area-texto2" readonly></textarea>
+                </div>
+                <br>
+                <div id="caja-boton">
+                    <button type="button" class="botones" id="boton-copiar" onclick="botonCopiar()">
+                        <span>Copiar</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
