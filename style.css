@@ -107,7 +107,7 @@ main {
     font-size: 18px;
 }
 
-.caja-botones {
+.caja-botones, .caja-boton {
     width: 100%;
     height: 60px;
     display: flex;
@@ -133,15 +133,6 @@ main {
     padding: 2px 5px;
     width: 500px;
 }
-
-/* .caja-boton {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid yellow;
-} */
 
 .area-texto {
     height: 400px;
