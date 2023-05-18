@@ -4,6 +4,7 @@ function botonEncriptar() {
     if (recibo_flag == true) {
         alertar("No se permiten números o espacio vacío")
         text_1.value = ""
+        setTimeout(()=>text_1.focus(), 2300)
     }
     else {
         text_2.value = encriptar()
@@ -17,6 +18,7 @@ function botonDesencriptar() {
     if (recibo_flag == true) {
         alertar("No se permiten números o espacio vacío")
         text_1.value = ""
+        setTimeout(()=>text_1.focus(), 2300)
     }
     else {
         text_2.value = desencriptar()
@@ -87,7 +89,7 @@ function alertar(info) {
         icon: "warning",
         iconColor: "white",
         width: "30%",
-        timer: 2500,
+        timer: 2000,
         timerProgressBar: true,
         showConfirmButton: false,
     })
