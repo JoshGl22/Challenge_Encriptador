@@ -11,9 +11,7 @@
     z-index: -1;
 }
 
-/* HE CENTRADO EL CONTENIDO DEL MAIN */
 .contenedor {
-    /* Altura minima es el alto de la pagina */
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -22,11 +20,16 @@
 }
 
 .contenido {
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     padding: 10px;
-    position: relative;
+    /* position: relative; */
     border: 2px solid white;
+}
+
+.caja-header {
+    border: 2px solid orange;
+    display: block;
 }
 
 header {
@@ -55,21 +58,31 @@ header img:hover {
     color: #f9f9f9;
 }
 
-.section-encriptyon {
-    display: inline-block;
-    position: absolute;
-    top: 19%;
-    left: 8%;
-    border: 2px solid red;
-
-}
-
-.caja-texto1 div {
+main {
+    width: 100%;
+    height: 82%;
     display: flex;
     align-items: center;
-    width: 162px;
+    border: 3px solid rgb(161, 201, 1);
+    padding: 5px;
+    margin-top: 10px;
+}
+.section-encriptyon, .section-mostrar{
+    margin: 0 auto;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.caja-texto1 div:first-child, .caja-texto2 div:first-child{
+    display: flex;
+    align-items: center;
+    width: 100%;
     height: 25px;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
+    border: 2px solid red;
 }
 
 .caja-texto1 div label {
@@ -83,7 +96,6 @@ header img:hover {
 .caja-texto1 textarea {
     padding: 2px 5px;
     width: 650px;
-    height: 400px;
 }
 
 .caja-texto1 textarea::placeholder {
@@ -95,51 +107,22 @@ header img:hover {
     font-size: 18px;
 }
 
-.botones-encript {
-    width: 650px;
-    height: 40px;
-    /* position: relative; */
-    border: 2px solid green;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .caja-botones {
+    width: 100%;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 400px;
-    height: 60px;
     border: 2px solid yellow;
     box-sizing: border-box;
 }
 
-.botones-encript .botones {
-    margin-left: 60px;
-    margin-right: 60px;
-}
-
-.section-mostrar {
-    display: inline-block;
-    position: absolute;
-    top: 3.6%;
-    right: 5%;
-    border: 2px solid blue;
-
-}
-
-.caja-texto2 div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 25px;
-    margin-bottom: 1px;
+.caja-botones .botones {
+    margin: 0 auto;
 }
 
 .caja-texto2 div label {
+    margin: 0 auto;
     font-size: 15px;
     font-weight: bold;
     color: #f9f9f9;
@@ -148,20 +131,20 @@ header img:hover {
 
 .caja-texto2 textarea {
     padding: 2px 5px;
-    width: 400px;
-    height: 500px;
+    width: 500px;
 }
 
-.caja-boton {
+/* .caja-boton {
+    width: 100%;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 400px;
-    height: 40px;
     border: 2px solid yellow;
-}
+} */
 
 .area-texto {
+    height: 400px;
     resize: none;
     background-color: rgba(46, 46, 46, 0.342);
     border-radius: 10px;

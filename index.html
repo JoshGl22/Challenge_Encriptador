@@ -18,22 +18,25 @@
 
     <div class="contenedor">
         <div class="contenido">
-            <header>
-                <h1><img src="/img/incognito4.png" alt="incognito"></h1>
-                <h2 class="titulo">// <span class="typed"></span></h2>
-            </header>
+            <div class="caja-header">
+                <header>
+                    <h1><img src="/img/incognito4.png" alt="incognito"></h1>
+                    <h2 class="titulo">// <span class="typed"></span></h2>
+                </header>
+            </div>
 
-            <section class="section-encriptyon">
-                <div class="caja-texto1">
-                    <div>
-                        <label for="texto">Ingresa aqui.</label>
+            <main>
+                <section class="section-encriptyon">
+                    <div class="caja-texto1">
+                        <div>
+                            <label for="texto">Ingresa aqui.</label>
+                        </div>
+
+                        <textarea name="texto" class="area-texto" autofocus
+                            placeholder="Solo letras minusculas y sin acento" id="area-texto1"></textarea>
                     </div>
 
-                    <textarea name="texto" class="area-texto" autofocus
-                        placeholder="Solo letras minusculas y sin acento" id="area-texto1"></textarea>
-                </div>
 
-                <div class="botones-encript">
                     <div class="caja-botones">
                         <button type="button" class="botones" onclick="botonEncriptar()">
                             <span>Encriptar</span>
@@ -42,23 +45,23 @@
                             <span>Desencriptar</span>
                         </button>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="section-mostrar">
-                <div class="caja-texto2">
-                    <div>
-                        <label for="texto-encriptado" id="mensaje"></label>
+                <section class="section-mostrar">
+                    <div class="caja-texto2">
+                        <div>
+                            <label for="texto-encriptado" id="mensaje"></label>
+                        </div>
+                        <textarea name="texto-encriptado" class="area-texto" id="area-texto2" readonly></textarea>
                     </div>
-                    <textarea name="texto-encriptado" class="area-texto" id="area-texto2" readonly></textarea>
-                </div>
-                <br>
-                <div class="caja-boton">
-                    <button type="button" class="botones" id="boton-copiar" onclick="botonCopiar()">
-                        <span>Copiar</span>
-                    </button>
-                </div>
-            </section>
+                    <br>
+                    <div class="caja-boton">
+                        <button type="button" class="botones" id="boton-copiar" onclick="botonCopiar()">
+                            <span>Copiar</span>
+                        </button>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
 
