@@ -33,11 +33,12 @@
 }
 
 header {
-    display: flex;
-    width: 55.248%;
+    width: 55%;
     height: 100px;
-    border: 2px solid cyan;
+    display: flex;
     align-items: center;
+    border: 2px solid cyan;
+    
 }
 
 header img {
@@ -66,14 +67,25 @@ main {
     border: 3px solid rgb(161, 201, 1);
     padding: 5px;
     margin-top: 10px;
+    box-sizing: border-box;
 }
 .section-encriptyon, .section-mostrar{
+    width: 49%;
+    height: 90%;
     margin: 0 auto;
     border: 2px solid blue;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
+    justify-content: center;
+    box-sizing: content-box;
+}
+
+.caja-texto1, .caja-texto2{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 5px 0 5px 0;
 }
 
 .caja-texto1 div:first-child, .caja-texto2 div:first-child{
@@ -95,7 +107,7 @@ main {
 
 .caja-texto1 textarea {
     padding: 2px 5px;
-    width: 650px;
+    width: 95%;
 }
 
 .caja-texto1 textarea::placeholder {
@@ -131,7 +143,7 @@ main {
 
 .caja-texto2 textarea {
     padding: 2px 5px;
-    width: 500px;
+    width: 80%;
 }
 
 .area-texto {
