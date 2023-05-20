@@ -95,24 +95,29 @@ function alertar(info) {
     })
 }
 
-function animarTexto(llave){
+function animarTexto(llave, strings, loopCount){
     const typed = new Typed(llave, {
-        strings: ["Ingresa texto", "Encripta", "Desencripta"," Con Encryption", "(¬‿¬ )"],
+        strings: generarStrings(strings),
         typeSpeed: 75, // Velocidad en mlisegundos para poner una letra,
         startDelay: 1500, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
         backSpeed: 75, // Velocidad en milisegundos para borrrar una letra,
         shuffle: false, // Alterar el orden en el que escribe las palabras.
         backDelay: 1000, // Tiempo de espera despues de que termina de escribir una palabra.
         loop: true, // Repetir el array de strings
-        loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
+        loopCount: loopCount, // Cantidad de veces a repetir el array.  false = infinite
         showCursor: true, // Mostrar cursor palpitanto
         cursorChar: '_', // Caracter para el cursor
         contentType: 'html', // 'html' o 'null' para texto sin formato
     });
 }
 
+function generarStrings(strings){
+    let arrStrings = strings.split(",")
+    return arrStrings
+}   
+
 let text_1 = document.getElementById("area-texto1")
 let text_2 = document.getElementById("area-texto2")
 let letras = ["e","i", "a","o","u"], cifrado = ["enter", "imes", "ai", "ober", "ufat"]
 
-animarTexto(".typed")
+animarTexto(".typed", "Ingresa texto, Encripta, Desencripta, Con Encryption, (¬‿¬ )", false)
