@@ -154,7 +154,7 @@ main {
 }
 
 .caja-texto1 textarea::placeholder {
-    background-image: url('/img/aviso2.png');
+    background-image: url('img/aviso2.png');
     background-repeat: no-repeat;
     background-position: 10px 4.5px;
     background-size: 16px;
