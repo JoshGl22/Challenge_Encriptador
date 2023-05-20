@@ -32,7 +32,7 @@ function botonCopiar() {
     navigator.clipboard.writeText(text_2.value)
     text_2.value = ""
     mensaje.innerHTML = "Texto copiado"
-    setTimeout(() => mensaje.innerHTML = "", 4000)
+    setTimeout(() => mensaje.innerHTML = "", 2500)
     text_1.focus()
 }
 

@@ -23,15 +23,14 @@
     width: 95%;
     height: 95%;
     padding: 10px;
-    /* position: relative; */
     box-sizing: content-box;
-    border: 2px solid white;
 }
 
 .caja-header {
-    border: 2px solid orange;
     display: flex;
     align-items: center;
+    box-shadow: 1px 1px 3px rgb(56, 56, 56);
+    padding: 2px;
 }
 
 header {
@@ -39,7 +38,6 @@ header {
     height: 100px;
     display: flex;
     align-items: center;
-    border: 2px solid cyan;
 }
 
 header img {
@@ -54,7 +52,6 @@ header img:hover {
 .caja-logos {
     width: 20%;
     height: 100px;
-    border: 2px solid aquamarine;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -97,7 +94,7 @@ header img:hover {
 
 .titulo {
     /* vw (viewport width) instead of px */
-    font-size: 3.0vw;
+    font-size: 3.5vw;
     font-weight: bold;
     text-shadow: 1px 1px 6px rgb(0, 201, 0);
     margin-left: 50px;
@@ -109,7 +106,6 @@ main {
     height: 82%;
     display: flex;
     align-items: center;
-    border: 3px solid rgb(161, 201, 1);
     padding: 5px;
     margin-top: 10px;
     box-sizing: border-box;
@@ -120,7 +116,6 @@ main {
     width: 49%;
     height: 90%;
     margin: 0 auto;
-    border: 2px solid blue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,11 +138,10 @@ main {
     width: 100%;
     height: 25px;
     margin-bottom: 2px;
-    border: 2px solid red;
 }
 
 .caja-texto1 div label {
-    margin-left: 6px;
+    margin-left: 20px;
     font-size: 15px;
     font-weight: bold;
     color: #f9f9f9;
@@ -175,8 +169,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid yellow;
     box-sizing: border-box;
+    margin-top: 5px;
 }
 
 .caja-botones .botones {
@@ -267,5 +261,4 @@ main {
 
 .swal2-icon {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.386);
-    /* Cambia los valores según tus preferencias */
 }
