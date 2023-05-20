@@ -24,21 +24,22 @@
     height: 95%;
     padding: 10px;
     /* position: relative; */
+    box-sizing: content-box;
     border: 2px solid white;
 }
 
 .caja-header {
     border: 2px solid orange;
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
 header {
-    width: 55%;
+    width: 50%;
     height: 100px;
     display: flex;
     align-items: center;
     border: 2px solid cyan;
-    
 }
 
 header img {
@@ -50,11 +51,34 @@ header img:hover {
     transform: scale(0.9);
 }
 
+.caja-logos{
+    width: 20%;
+    height: 100px;
+    border: 2px solid aquamarine;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja-logos h3{
+    color: white;
+    margin: 0 auto;
+}
+
+.img{
+    /* background: white;
+    border-radius: 5px; */
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
 .titulo {
     /* vw (viewport width) instead of px */
     font-size: 3.0vw;
     font-weight: bold;
-    text-shadow: 1px 1px 10px rgb(0, 201, 0);
+    text-shadow: 1px 1px 6px rgb(0, 201, 0);
     margin-left: 50px;
     color: #f9f9f9;
 }
