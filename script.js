@@ -119,5 +119,18 @@ function generarStrings(strings){
 let text_1 = document.getElementById("area-texto1")
 let text_2 = document.getElementById("area-texto2")
 let letras = ["e","i", "a","o","u"], cifrado = ["enter", "imes", "ai", "ober", "ufat"]
+let div_logos = document.getElementById("div-logos")
+let text_follow = document.getElementById("follow")
 
 animarTexto(".typed", "Ingresa texto, Encripta, Desencripta, Con Encryption, (¬‿¬ )", false)
+
+div_logos.addEventListener('mousemove', function(event){
+    text_follow.innerHTML = "Sigueme en"
+    text_follow.classList.add("texto-transicion");
+    text_follow.style.margin = "0 auto"
+})
+div_logos.addEventListener('mouseleave', function(event){
+    text_follow.innerHTML = ""
+    text_follow.classList.add("texto-transicion");
+    text_follow.style.margin = "0"
+})
