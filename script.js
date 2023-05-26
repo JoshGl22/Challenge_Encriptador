@@ -2,9 +2,9 @@ function botonEncriptar() {
     let recibo_flag = validarTexto(text_1.value)
 
     if (recibo_flag == true) {
-        alertar("No se permiten números o espacio vacío")
+        alertar("Caracter Invalido")
         text_1.value = ""
-        setTimeout(()=>text_1.focus(), 2300)
+        setTimeout(() => text_1.focus(), 2300)
     }
     else {
         text_2.value = encriptar()
@@ -16,9 +16,9 @@ function botonDesencriptar() {
     let recibo_flag = validarTexto(text_1.value)
 
     if (recibo_flag == true) {
-        alertar("No se permiten números o espacio vacío")
+        alertar("Caracter Invalido")
         text_1.value = ""
-        setTimeout(()=>text_1.focus(), 2300)
+        setTimeout(() => text_1.focus(), 2300)
     }
     else {
         text_2.value = desencriptar()
@@ -42,13 +42,13 @@ function encriptar() {
     //img: i = toma letras mayusculas y minusculas
     // g = que tome todo el texto
     // m = tome en cuenta multiples lineas
-    for(let i = 0; i != letras.length; i++){
-        const regex = new RegExp(letras[i], 'img') 
+    for (let i = 0; i != letras.length; i++) {
+        const regex = new RegExp(letras[i], 'img')
 
-        if(i == 0){
+        if (i == 0) {
             texto_encript = texto_NoEncript.replace(regex, cifrado[i])
         }
-        else{
+        else {
             texto_encript = texto_encript.replace(regex, cifrado[i])
         }
     }
@@ -59,13 +59,13 @@ function desencriptar() {
     let texto_encript = text_1.value.toLowerCase()
     let texto_desencript
 
-    for(let i = 0; i != letras.length; i++){
+    for (let i = 0; i != letras.length; i++) {
         const regex = new RegExp(cifrado[i], 'img') //Evaluando el valor del array
 
-        if(i == 0){
+        if (i == 0) {
             texto_desencript = texto_encript.replace(regex, letras[i])
         }
-        else{
+        else {
             texto_desencript = texto_desencript.replace(regex, letras[i])
         }
     }
@@ -73,8 +73,20 @@ function desencriptar() {
 }
 
 function validarTexto(texto) {
-    let flag = (noTieneNumeros(texto) == false || texto == "") ? true : false
+    let flag = (noTieneNumeros(texto) == false || texto == "" || detectarCharEsp(texto)) ? true : false
     return flag
+}
+
+function detectarCharEsp(cadena) {
+    let strEsp = /[^\w\sáéíóúüñÁÉÍÓÚÜÑ]/g //regExp busca acentos y caracteres especiales
+
+    // Buscar coincidencias en el texto
+    let coincidencias = cadena.match(strEsp);
+
+    // Comprobar si se encontraron coincidencias
+    let flag_str = (coincidencias != null) ? true : false
+    //true = se encontraron acentos o caracteres especiales
+    return flag_str
 }
 
 function noTieneNumeros(cadena) {
@@ -95,7 +107,7 @@ function alertar(info) {
     })
 }
 
-function animarTexto(llave, strings, loopCount){
+function animarTexto(llave, strings, loopCount) {
     const typed = new Typed(llave, {
         strings: generarStrings(strings),
         typeSpeed: 75, // Velocidad en mlisegundos para poner una letra,
@@ -111,25 +123,25 @@ function animarTexto(llave, strings, loopCount){
     });
 }
 
-function generarStrings(strings){
+function generarStrings(strings) {
     let arrStrings = strings.split(",")
     return arrStrings
-}   
+}
 
 let text_1 = document.getElementById("area-texto1")
 let text_2 = document.getElementById("area-texto2")
-let letras = ["e","i", "a","o","u"], cifrado = ["enter", "imes", "ai", "ober", "ufat"]
+let letras = ["e", "i", "a", "o", "u"], cifrado = ["enter", "imes", "ai", "ober", "ufat"]
 let div_logos = document.getElementById("div-logos")
 let text_follow = document.getElementById("follow")
 
 animarTexto(".typed", "Ingresa texto, Encripta, Desencripta, Con Encryption, (¬‿¬ )", false)
 
-div_logos.addEventListener('mousemove', function(event){
+div_logos.addEventListener('mousemove', function (event) {
     text_follow.innerHTML = "Sigueme en"
     text_follow.classList.add("texto-transicion");
     text_follow.style.margin = "0 auto"
 })
-div_logos.addEventListener('mouseleave', function(event){
+div_logos.addEventListener('mouseleave', function (event) {
     text_follow.innerHTML = ""
     text_follow.classList.add("texto-transicion");
     text_follow.style.margin = "0"
