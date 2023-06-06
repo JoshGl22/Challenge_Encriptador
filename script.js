@@ -1,12 +1,26 @@
+const text_1 = document.getElementById("area-texto1")
+const text_2 = document.getElementById("area-texto2")
+let letras = ["e", "i", "a", "o", "u"], cifrado = ["enter", "imes", "ai", "ober", "ufat"]
+const div_logos = document.getElementById("div-logos")
+const text_follow = document.getElementById("follow")
+
+animarTexto(".typed", "Ingresa texto, Encripta, Desencripta, Con Encryption, (¬‿¬ )", false)
+
+div_logos.addEventListener('mousemove', function (event) {
+    text_follow.innerHTML = "Sigueme en"
+    text_follow.classList.add("texto-transicion");
+    text_follow.style.margin = "0 auto"
+})
+div_logos.addEventListener('mouseleave', function (event) {
+    text_follow.innerHTML = ""
+    text_follow.classList.add("texto-transicion");
+    text_follow.style.margin = "0"
+})
+
 function botonEncriptar() {
     let recibo_flag = validarTexto(text_1.value)
 
-    if (recibo_flag == true) {
-        alertar("Caracter Invalido")
-        text_1.value = ""
-        setTimeout(() => text_1.focus(), 2300)
-    }
-    else {
+    if (!recibo_flag) {
         text_2.value = encriptar()
         text_1.value = ""
     }
@@ -15,12 +29,7 @@ function botonEncriptar() {
 function botonDesencriptar() {
     let recibo_flag = validarTexto(text_1.value)
 
-    if (recibo_flag == true) {
-        alertar("Caracter Invalido")
-        text_1.value = ""
-        setTimeout(() => text_1.focus(), 2300)
-    }
-    else {
+    if (!recibo_flag) {
         text_2.value = desencriptar()
         text_1.value = ""
     }
@@ -73,20 +82,24 @@ function desencriptar() {
 }
 
 function validarTexto(texto) {
-    let flag = (noTieneNumeros(texto) == false || texto == "" || detectarCharEsp(texto)) ? true : false
-    return flag
+    let sinNumeros = noTieneNumeros(texto)
+    let sinCharEspecial = detectarCharEsp(texto)
+    let flag = ( !sinNumeros || texto === "" || sinCharEspecial ) ? true : false
+
+    if(flag){
+        alertar("Caracter Invalido")
+        text_1.value = ""
+        setTimeout(() => text_1.focus(), 2300)
+        return flag
+    }
 }
 
 function detectarCharEsp(cadena) {
-    let strEsp = /[^\w\sáéíóúüñÁÉÍÓÚÜÑ]/g //regExp busca acentos y caracteres especiales
-
-    // Buscar coincidencias en el texto
-    let coincidencias = cadena.match(strEsp);
-
-    // Comprobar si se encontraron coincidencias
-    let flag_str = (coincidencias != null) ? true : false
-    //true = se encontraron acentos o caracteres especiales
-    return flag_str
+    let strEsp = /[^\w\s\p{M}]/gu //regExp busca acentos y caracteres especiales
+    let coincidencias = cadena.match(strEsp); // Buscar coincidencias en el texto
+    let flag_str = (coincidencias != null) ? true : false // Comprobar si se encontraron coincidencias
+    console.log({flag_str})
+    return flag_str //true = se encontraron acentos o caracteres especiales
 }
 
 function noTieneNumeros(cadena) {
@@ -128,21 +141,3 @@ function generarStrings(strings) {
     return arrStrings
 }
 
-let text_1 = document.getElementById("area-texto1")
-let text_2 = document.getElementById("area-texto2")
-let letras = ["e", "i", "a", "o", "u"], cifrado = ["enter", "imes", "ai", "ober", "ufat"]
-let div_logos = document.getElementById("div-logos")
-let text_follow = document.getElementById("follow")
-
-animarTexto(".typed", "Ingresa texto, Encripta, Desencripta, Con Encryption, (¬‿¬ )", false)
-
-div_logos.addEventListener('mousemove', function (event) {
-    text_follow.innerHTML = "Sigueme en"
-    text_follow.classList.add("texto-transicion");
-    text_follow.style.margin = "0 auto"
-})
-div_logos.addEventListener('mouseleave', function (event) {
-    text_follow.innerHTML = ""
-    text_follow.classList.add("texto-transicion");
-    text_follow.style.margin = "0"
-})
